@@ -1,0 +1,207 @@
+import flet as ft
+import mysql.connector
+from mysql.connector import Error
+import re
+from datetime import datetime
+
+# Função para conectar ao banco de dados
+def connect_to_database(host, user, password, database):
+    try:
+        connection = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password,
+            database=database
+        )
+        if connection.is_connected():
+            return connection
+    except Error as e:
+        print(f"Error: {e}")
+        return None
+
+# Validação de email
+def validate_email(email):
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,}$'
+    return re.match(pattern, email) is not None
+
+# Validação de data
+def validate_date(date):
+    try:
+        datetime.strptime(date, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False
+
+def main(page: ft.Page):
+    page.title = "Conferência Científica"
+    global connection
+
+    host_input = ft.TextField(label="Host", value="localhost", width=300)
+    user_input = ft.TextField(label="Usuário", width=300)
+    password_input = ft.TextField(label="Senha", password=True, width=300)
+    database_input = ft.TextField(label="Banco de Dados", value="conferenciacientifica", width=300)
+
+    def connect_button_click(e):
+        global connection
+        connection = connect_to_database(
+            host_input.value,
+            user_input.value,
+            password_input.value,
+            database_input.value
+        )
+        if connection:
+            page.add(ft.Text("Conexão bem-sucedida!", color=ft.Colors.GREEN))
+            show_main_menu()
+        else:
+            page.add(ft.Text("Falha na conexão!", color=ft.Colors.RED))
+
+    connect_button = ft.ElevatedButton("Conectar", on_click=connect_button_click)
+
+    page.add(
+        host_input,
+        user_input,
+        password_input,
+        database_input,
+        connect_button
+    )
+
+    def show_main_menu():
+        page.clean()
+        page.add(ft.Text("Menu Principal", size=30))
+
+        menu_row = ft.Row(
+            alignment=ft.MainAxisAlignment.START,
+            controls=[ 
+                ft.ElevatedButton("Gerenciar Conferências", on_click=lambda e: show_conferences_menu(), color=ft.Colors.BLUE),
+                ft.ElevatedButton("Avaliações", on_click=lambda e: show_reviews_menu(), color=ft.Colors.ORANGE),
+                ft.ElevatedButton("Gerenciar Participantes", on_click=lambda e: show_participants_menu(), color=ft.Colors.GREEN),
+                ft.ElevatedButton("Gerenciar Sessões", on_click=lambda e: show_sessions_menu(), color=ft.Colors.PURPLE),
+                ft.ElevatedButton("Gerenciar Apresentações", on_click=lambda e: show_presentations_menu(), color=ft.Colors.RED),
+                ft.ElevatedButton("Gerenciar Submissões", on_click=lambda e: show_submissions_menu(), color=ft.Colors.YELLOW),
+                ft.ElevatedButton("Gerenciar Revisores", on_click=lambda e: show_reviewers_menu(), color=ft.Colors.CYAN)
+            ],
+            spacing=15
+        )
+        page.add(menu_row)
+
+    def create_crud_menu(title, table_name, fields):
+        page.clean()
+        page.add(ft.Text(title, size=24))
+
+        inputs = {field: ft.TextField(label=field) for field in fields}
+
+        def add_entry(e):
+            try:
+                cursor = connection.cursor()
+                query = f"INSERT INTO {table_name} ({', '.join(fields)}) VALUES ({', '.join(['%s']*len(fields))})"
+                values = tuple(inputs[field].value for field in fields)
+
+                if any(val == "" for val in values):
+                    page.add(ft.Text("Por favor, preencha todos os campos.", color=ft.Colors.RED))
+                    return
+
+                cursor.execute(query, values)
+                connection.commit()
+                page.add(ft.Text("Registro adicionado com sucesso!", color=ft.Colors.GREEN))
+                list_entries_with_filter(table_name, fields, fields[1])
+            except Error as e:
+                page.add(ft.Text(f"Erro ao adicionar registro: {e}", color=ft.Colors.RED))
+
+        def edit_entry(table_name, fields, entry):
+            page.clean()
+            page.add(ft.Text(f"Editar {title}", size=24))
+            inputs = {field: ft.TextField(label=field, value=str(entry[i+1])) for i, field in enumerate(fields[1:])}
+
+            def save_changes(e):
+                cursor = connection.cursor()
+                set_clause = ", ".join([f"{fields[i+1]} = %s" for i in range(len(fields)-1)])
+                query = f"UPDATE {table_name} SET {set_clause} WHERE {fields[0]} = %s"
+                values = tuple([inputs[field].value for field in fields[1:]]) + (entry[0],)
+                cursor.execute(query, values)
+                connection.commit()
+                page.add(ft.Text("Registro atualizado com sucesso!", color=ft.Colors.GREEN))
+                list_entries_with_filter(table_name, fields, fields[1])
+
+            for field in fields[1:]:
+                page.add(inputs[field])
+            page.add(ft.ElevatedButton("Salvar Alterações", on_click=save_changes))
+            page.add(ft.ElevatedButton("Cancelar", on_click=lambda e: list_entries_with_filter(table_name, fields, fields[1])))
+
+        def delete_entry(table_name, entry_id):
+            cursor = connection.cursor()
+            query = f"DELETE FROM {table_name} WHERE {fields[0]} = %s"
+            cursor.execute(query, (entry_id,))
+            connection.commit()
+            page.add(ft.Text("Registro deletado com sucesso!", color=ft.Colors.GREEN))
+            list_entries_with_filter(table_name, fields, fields[1])
+
+        def list_entries():
+            page.clean()
+            page.add(ft.Text(f"{title} Registrados", size=20))
+            cursor = connection.cursor()
+            cursor.execute(f"SELECT * FROM {table_name}")
+            entries = cursor.fetchall()
+            for entry in entries:
+                row = ft.Row([
+                    ft.Text(" | ".join([str(val) for val in entry[1:]])),
+                    ft.IconButton(ft.icons.EDIT, on_click=lambda e, entry=entry: edit_entry(table_name, fields, entry)),
+                    ft.IconButton(ft.icons.DELETE, on_click=lambda e, entry=entry: delete_entry(table_name, entry[0]))
+                ])
+                page.add(row)
+
+            page.add(ft.ElevatedButton("Voltar ao Menu Principal", on_click=lambda e: show_main_menu()))
+
+        for field in fields:
+            page.add(inputs[field])
+
+        page.add(ft.ElevatedButton(f"Adicionar {title}", on_click=add_entry))
+        page.add(ft.ElevatedButton(f"Listar {title}", on_click=lambda e: list_entries()))
+        page.add(ft.ElevatedButton("Voltar ao Menu Principal", on_click=lambda e: show_main_menu()))
+
+    def list_entries_with_filter(table_name, fields, filter_field):
+        page.clean()
+        page.add(ft.Text(f"{table_name} Registrados", size=20))
+
+        filter_input = ft.TextField(label=f"Filtrar por {filter_field}", width=300)
+
+        def search_entries(e):
+            page.clean()
+            filter_value = filter_input.value
+            cursor = connection.cursor()
+            query = f"SELECT * FROM {table_name} WHERE {filter_field} LIKE %s"
+            cursor.execute(query, ('%' + filter_value + '%',))
+            entries = cursor.fetchall()
+            for entry in entries:
+                row = ft.Row([ 
+                    ft.Text(" | ".join([str(val) for val in entry[1:]])),
+                    ft.IconButton(ft.icons.EDIT, on_click=lambda e, entry=entry: create_crud_menu(table_name, fields, entry)),
+                    ft.IconButton(ft.icons.DELETE, on_click=lambda e, entry=entry: delete_entry(table_name, entry[0]))
+                ])
+                page.add(row)
+
+        page.add(filter_input)
+        page.add(ft.ElevatedButton("Buscar", on_click=search_entries))
+        page.add(ft.ElevatedButton("Voltar", on_click=lambda e: show_main_menu()))
+
+    def show_conferences_menu():
+        create_crud_menu("Conferência", "Conferencia", ["ID_Conferencia", "Titulo", "Data", "Local", "Tema_Central"])
+
+    def show_sessions_menu():
+        create_crud_menu("Sessão", "Sessao", ["ID_Sessao", "ID_Conferencia", "Data_Hora", "Tema_Subtematico", "Coordenador"])
+
+    def show_presentations_menu():
+        create_crud_menu("Apresentação", "Apresentacao", ["id_apresentacao", "id_sessao", "titulo", "resumo", "duracao_prevista", "id_palestrante", "materiais_suporte"])
+
+    def show_submissions_menu():
+        create_crud_menu("Submissão", "Submissao", ["ID_Submissao", "ID_Apresentacao", "Titulo", "Resumo", "Data_Submissao", "Status"])
+
+    def show_reviewers_menu():
+        create_crud_menu("Revisor", "Revisor", ["id_revisor", "nome", "email", "area_especializacao"])
+
+    def show_reviews_menu():
+        create_crud_menu("Avaliação", "Avaliacao", ["ID_Avaliacao", "ID_Submissao", "ID_Revisor", "Feedback", "Decisao"])
+
+    def show_participants_menu():
+        create_crud_menu("Participante", "Participante", ["ID_Participante", "Nome", "Filiacao_Institucional", "Contato", "Tipo_Participacao"])
+
+ft.app(target=main)

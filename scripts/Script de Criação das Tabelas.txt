@@ -1,0 +1,75 @@
+CREATE DATABASE IF NOT EXISTS ConferenciaCientifica;
+USE ConferenciaCientifica;
+
+-- Tabela: Conferência
+CREATE TABLE Conferencia (
+    ID_Conferencia INT AUTO_INCREMENT PRIMARY KEY,
+    Titulo VARCHAR(255) UNIQUE NOT NULL,
+    Data DATE NOT NULL,
+    Local VARCHAR(255) NOT NULL,
+    Tema_Central VARCHAR(255)
+);
+
+-- Tabela: Participante
+CREATE TABLE Participante (
+    ID_Participante INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Filiacao_Institucional VARCHAR(255),
+    Contato VARCHAR(255),
+    Tipo_Participacao ENUM('Palestrante', 'Ouvinte', 'Organizador') NOT NULL
+);
+
+-- Tabela: Sessão
+CREATE TABLE Sessao (
+    ID_Sessao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Conferencia INT NOT NULL,
+    Data_Hora DATETIME NOT NULL,
+    Tema_Subtematico VARCHAR(255),
+    Coordenador INT,
+    FOREIGN KEY (ID_Conferencia) REFERENCES Conferencia(ID_Conferencia),
+    FOREIGN KEY (Coordenador) REFERENCES Participante(ID_Participante)
+);
+
+-- Tabela: Apresentação
+CREATE TABLE Apresentacao (
+    ID_Apresentacao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Sessao INT NOT NULL,
+    Titulo VARCHAR(255) NOT NULL,
+    Resumo TEXT,
+    Duracao_Prevista TIME,
+    ID_Palestrante INT NOT NULL,
+    Materiais_Suporte TEXT,
+    FOREIGN KEY (ID_Sessao) REFERENCES Sessao(ID_Sessao),
+    FOREIGN KEY (ID_Palestrante) REFERENCES Participante(ID_Participante)
+);
+
+-- Tabela: Submissão
+CREATE TABLE Submissao (
+    ID_Submissao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Apresentacao INT NOT NULL,
+    Titulo VARCHAR(255),
+    Resumo TEXT,
+    Data_Submissao DATE,
+    Status ENUM('Aceito', 'Rejeitado', 'Em avaliação') DEFAULT 'Em avaliação',
+    FOREIGN KEY (ID_Apresentacao) REFERENCES Apresentacao(ID_Apresentacao)
+);
+
+-- Tabela: Revisor
+CREATE TABLE Revisor (
+    ID_Revisor INT AUTO_INCREMENT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Filiacao_Institucional VARCHAR(255),
+    Contato VARCHAR(255),
+    Especialidade VARCHAR(255)
+);
+
+-- Tabela: Avaliação
+CREATE TABLE Avaliacao (
+    ID_Avaliacao INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Submissao INT NOT NULL,
+    ID_Revisor INT NOT NULL,
+    Feedback TEXT,
+    Decisao ENUM('Aceito', 'Rejeitado') NOT NULL,
+    FOREIGN KEY (ID_Submissao) REFERENCES Submissao(ID_Submissao),
+    FOREIGN KEY (ID_Revisor) REFERENCES Revisor(ID_Revisor)
+);

@@ -1,0 +1,57 @@
+USE ConferenciaCientifica;
+
+-- Tabela: Conferência
+INSERT INTO Conferencia (Titulo, Data, Local, Tema_Central) VALUES
+('ConfTec 2025', '2025-09-01', 'São Paulo - SP', 'Tecnologias Emergentes'),
+('BioConf 2025', '2025-10-10', 'Campinas - SP', 'Biotecnologia'),
+('EduTech 2025', '2025-11-15', 'Belo Horizonte - MG', 'Tecnologia na Educação'),
+('HealthConf 2025', '2025-08-20', 'Rio de Janeiro - RJ', 'Saúde e Inovação'),
+('AgroTech 2025', '2025-12-05', 'Curitiba - PR', 'Inovações no Agronegócio');
+
+-- Tabela: Participante
+INSERT INTO Participante (Nome, Filiacao_Institucional, Contato, Tipo_Participacao) VALUES
+('Alice Ferreira', 'USP', 'alice@usp.br', 'Palestrante'),
+('Bruno Santos', 'UFMG', 'bruno@ufmg.br', 'Ouvinte'),
+('Carla Dias', 'UNICAMP', 'carla@unicamp.br', 'Organizador'),
+('Daniel Lopes', 'UFPR', 'daniel@ufpr.br', 'Palestrante'),
+('Eduarda Lima', 'PUC-Rio', 'eduarda@puc-rio.br', 'Ouvinte');
+
+-- Tabela: Sessão (vinculada à Conferência e ao Coordenador = Participante)
+INSERT INTO Sessao (ID_Conferencia, Data_Hora, Tema_Subtematico, Coordenador) VALUES
+(1, '2025-09-01 09:00:00', 'Inteligência Artificial', 3),
+(1, '2025-09-01 11:00:00', 'Internet das Coisas', 1),
+(2, '2025-10-10 10:30:00', 'Genética Moderna', 3),
+(3, '2025-11-15 14:00:00', 'Realidade Aumentada na Sala de Aula', 1),
+(4, '2025-08-20 16:00:00', 'Telemedicina e Diagnóstico', 3);
+
+-- Tabela: Apresentação (vinculada à Sessão e ao Palestrante = Participante)
+INSERT INTO Apresentacao (ID_Sessao, Titulo, Resumo, Duracao_Prevista, ID_Palestrante, Materiais_Suporte) VALUES
+(1, 'IA no Setor Público', 'Uso de IA em serviços públicos.', '00:30:00', 1, 'slides_ia.pdf'),
+(1, 'Redes Neurais Aplicadas', 'Conceitos avançados de redes neurais.', '00:45:00', 4, 'redes_neurais.pptx'),
+(2, 'IoT na Indústria', 'Aplicações reais da IoT.', '00:40:00', 1, 'iot_industria.pdf'),
+(3, 'Biotecnologia e Genética', 'Estudo sobre manipulação genética.', '00:35:00', 4, 'genetica.docx'),
+(5, 'Inovações em Telemedicina', 'Impactos da tecnologia na saúde.', '00:30:00', 1, 'telemedicina.pdf');
+
+-- Tabela: Submissão (vinculada à Apresentação)
+INSERT INTO Submissao (ID_Apresentacao, Titulo, Resumo, Data_Submissao, Status) VALUES
+(1, 'IA no Governo', 'Estudo sobre IA em políticas públicas.', '2025-07-01', 'Aceito'),
+(2, 'Redes Neurais', 'Análise de performance.', '2025-07-02', 'Rejeitado'),
+(3, 'IoT e Indústria 4.0', 'Integração de sistemas.', '2025-07-03', 'Em avaliação'),
+(4, 'Genética CRISPR', 'Avanços e debates.', '2025-07-04', 'Aceito'),
+(5, 'Saúde Digital', 'Transformações digitais no SUS.', '2025-07-05', 'Aceito');
+
+-- Tabela: Revisor
+INSERT INTO Revisor (Nome, Filiacao_Institucional, Contato, Especialidade) VALUES
+('Fábio Rezende', 'USP', 'fabio@usp.br', 'Inteligência Artificial'),
+('Giselle Moura', 'UFRJ', 'giselle@ufrj.br', 'Biotecnologia'),
+('Hugo Barreto', 'UnB', 'hugo@unb.br', 'Internet das Coisas'),
+('Isadora Neves', 'UFBA', 'isadora@ufba.br', 'Educação e Tecnologia'),
+('João Pedro Ramos', 'UFRGS', 'joao@ufrgs.br', 'Saúde Digital');
+
+-- Tabela: Avaliação (vinculada à Submissão e Revisor)
+INSERT INTO Avaliacao (ID_Submissao, ID_Revisor, Feedback, Decisao) VALUES
+(1, 1, 'Excelente abordagem e inovação.', 'Aceito'),
+(2, 3, 'Precisa de mais dados práticos.', 'Rejeitado'),
+(3, 1, 'Interessante, mas precisa ajustes.', 'Rejeitado'),
+(4, 2, 'Conteúdo bem estruturado.', 'Aceito'),
+(5, 5, 'Altamente relevante.', 'Aceito');
