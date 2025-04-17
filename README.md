@@ -80,25 +80,43 @@ Inserir registros iniciais para testes
 📂 Estrutura do Projeto
 
 conferencia_sistem/
+
 ├── crud/
+
 │   ├── conferencia_crud.py
+
 │   ├── participante_crud.py
+
 │   └── ...
+
 ├── ui/
+
 │   ├── home.py
+
 │   ├── participantes_view.py
+
 │   └── ...
+
 ├── db/
+
 │   └── conexao.py
+
 ├── data/
+
 │   └── populacao_inicial.sql
+
 ├── docs/
+
 │   ├── ERD_visualizacao.png
+
 │   └── mysql_screenshots/
+
 ├── main.py
+
 └── README.md
 
 ⚙️ Como Executar
+
 ✅ Pré-requisitos
 Python 3.10+
 
