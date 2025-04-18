@@ -265,7 +265,7 @@ Adicionando um registro no banco via aplicação
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/04_Adiconando_um_Registro_de_Conferencia_ao_Banco_de%20_Dados_via_Aplicacao.png)
 
-Registro adicionado ao banco de dados via APP - Linha com "ID_Conferencia" numero: 6 na imagem abaixo - indica a inserção
+Registro adicionado ao banco de dados via APP - Linha com "ID_Conferencia" = 6 - na imagem abaixo - indica a inserção
 
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/05_Registro_Adicionado_ao_Banco_de_Dados_MySQL_Workbench_via_Aplicacao.png)
