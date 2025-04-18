@@ -134,7 +134,7 @@ Para criar as tabelas e popular o banco de dados:
 Abra o MySQL Workbench 
 
 📌 Imagem ilustrativa  
-![Diagrama ER](./imagens/diagrma_ER_logico.png)
+[![Clique aqui para ver a imagem](https://github.com/usuario/repo/raw/main/imagem.png)](https://github.com/usuario/repo)
 
 Conecte-se ao seu servidor MySQL
 
