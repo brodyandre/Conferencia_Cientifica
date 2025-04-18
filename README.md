@@ -146,9 +146,12 @@ nossa configuração está assim:
    Após configurar estes campos clique no botão: Test Conection. Você deverá receber a seguinte mensagem conforme imagem abaixo
 
    📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/06_Criando_um%20_Banco_de_Dados_no_MySQL_Workbench.png)
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/08_Testando_a_Conexao.png)
 
-   
+Clique em ok na janela que se abriu,  e em ok novmanete na janela "Setup New Connection". Haverá uma conexão chamada "conferencia_cientifica". Dê dois cliques sobre ela para acessarmos o servidor conforme imagem abaixo
+
+    📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/08_Testando_a_Conexao.png) 
 
 Conecte-se ao seu servidor MySQL
 
