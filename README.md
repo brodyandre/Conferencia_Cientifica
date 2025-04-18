@@ -1,5 +1,64 @@
+# 🗓️ Modelo Conceitual para Sistema de Gerenciamento de Conferências Científicas
+
+## Introdução
+
+Nós, da **Data Smart**, somos especialistas em modelagem de dados e fomos contratados para desenvolver um modelo conceitual para um sistema que gerencia conferências científicas. Este sistema deve ser capaz de gerenciar informações sobre conferências, participantes, sessões de apresentação, artigos submetidos e revisores.
+
+## Levantamento de Requisitos
+
+Para desenvolver um sistema eficiente de gerenciamento de conferências científicas, é necessário entender e capturar diversos aspectos de como as conferências são organizadas, quais são os participantes envolvidos e quais atividades ocorrem. As informações levantadas são as seguintes:
+
+- **📅 Conferência**:
+  - Cada conferência possui um título único, data de realização, local e um tema central.
+  - As conferências podem ser compostas por várias sessões temáticas diferentes.
+
+- **👤 Participante**:
+  - Um participante pode ser um palestrante, ouvinte registrado ou organizador.
+  - Cada participante possui dados pessoais como nome, filiação institucional, contato e tipo de participação no evento.
+
+- **🗣️ Sessão**:
+  - Cada sessão dentro de uma conferência aborda subtemas específicos do tema central.
+  - Uma sessão inclui data e hora da apresentação, múltiplas apresentações e é coordenada por um ou mais organizadores.
+
+- **🎤 Apresentação**:
+  - Cada apresentação tem um título, um resumo, duração prevista e é atribuída a um palestrante específico.
+  - Apresentações podem incluir também materiais de suporte, como slides ou vídeos.
+
+- **📄 Submissão**:
+  - Artigos ou resumos são submetidos por palestrantes para avaliação antes de serem aceitos para apresentação.
+  - Cada submissão precisa ter informações dos artigos ou resumos, como título, resumo, data e status.
+  - Cada uma das submissões é avaliada por revisores designados.
+
+- **🔍 Revisor**:
+  - Revisores são especialistas em tópicos específicos e são responsáveis por avaliar as submissões.
+  - Eles fornecem feedback e uma decisão de aceitação ou rejeição.
+
+## Etapa 1: Identificação das Entidades
+
+Com base no levantamento de requisitos fornecido, as principais entidades que podemos identificar são:
+
+1. **🗓️ Conferência**
+2. **👤 Participante**
+3. **🗣️ Sessão**
+4. **🎤 Apresentação**
+5. **📄 Submissão**
+6. **🔍 Revisor**
+
+## Gráfico de Entidades
+
+📌 Modelo ER (Conceitual) completo  
+![Modelo ER](./imagens/diagrama_ER_conceitual.png)
+
+## Conclusão
+
+O modelo conceitual desenvolvido servirá como plano inicial para o desenvolvimento do modelo lógico que posteriormente será a base para podermos desenvolver uma implementação para um sistema de gerenciamento de conferências científicas, garantindo que todas as informações relevantes sejam capturadas e gerenciadas de forma eficiente. A próxima etapa envolverá a definição dos relacionamentos entre essas entidades e a criação do modelo lógico.
+
+📌 Diagrama ER (Lógico) completo  
+![Diagrama ER](./imagens/diagrama_ER_logico.png)
+
 🎓 Sistema de Gerenciamento de Conferências Científicas
-Aplicação completa para organização, submissão e avaliação de eventos científicos, construída com Python, Flet e MySQL Workbench.
+
+Com base nos diagrmas de ER Conceitual e Lógico, conseguimos desenvolver uma aplicação completa para organização, submissão e avaliação de eventos científicos, construída com Python, Flet e MySQL Workbench.
 
 
 📌 Visão Geral
@@ -39,7 +98,8 @@ Revisor
 
 Avaliação
 
-📌 Veja o Modelo ER (Conceitual) completo no diretório /docs.
+
+
 
 🛠️ Tecnologias Utilizadas
 
