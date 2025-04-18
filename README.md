@@ -212,7 +212,7 @@ conferencia_sistem/
 
 └── README.md
 
-⚙️ Como Executar
+## ⚙️ Como Executar
 
 ✅ Pré-requisitos
 Python 3.10+
