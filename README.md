@@ -240,6 +240,9 @@ Acesse a aplicação seguindo as imagens abaixo:
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/02_Interface_Grafica_Principal.png)
 
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/03_Menu_Gerenciar_Sessoes.png)
+
 
 
 
