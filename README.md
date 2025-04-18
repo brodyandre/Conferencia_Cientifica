@@ -169,7 +169,11 @@ Criar todas as tabelas com relacionamentos conforme imagem abaixo
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
 
-Para popularmos as tabelas com registros fictícios aleatórios, devemos acessar a pasta scripts, e copiar o contéudo do arquivo: "Script para popular tabelas no workbench" deletar o script anterior na janela "Query 1" e colar nessa janela, o conteúdo copiado. Na sequencia, clicamos no botão do "Raio". Com isso inserimos registros iniciais para testes
+Para popularmos as tabelas com registros fictícios aleatórios, devemos acessar a pasta scripts, e copiar o contéudo do arquivo: "Script para popular tabelas no workbench" deletar o script anterior na janela "Query 1" e colar nessa janela, o conteúdo copiado. Na sequencia, clicamos no botão do "Raio". Com isso inserimos registros iniciais para testes cpnforme imagem abaixo:
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/12_populando_oBanco_de_Dados.png)
+
 
 ## 📂 Estrutura do Projeto
 
@@ -209,7 +213,7 @@ conferencia_sistem/
 
 └── README.md
 
-⚙️ Como Executar
+## ⚙️ Como Executar
 
 ✅ Pré-requisitos
 Python 3.10+
@@ -220,26 +224,31 @@ MySQL Workbench (opcional, mas recomendado)
 
 VSCode (recomendado)
 
-🚀 Passo a passo
+## 🚀 Passo a passo
 
 # Clone o projeto
-git clone https://github.com/seuusuario/conferencia-sistema.git
-cd conferencia-sistema
+git clone https://github.com/seuusuario/conferencia-cientifica.git
 
-# Crie e ative o ambiente virtual
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
+ou faça um fork
 
-# Instale as dependências
-pip install -r requirements.txt
+acesse o diretorio onde o arquivo foi salvo via terminal do VSCode como por exemplo: 
 
-# Execute o script de criação de banco
-mysql -u usuario -p < data/populacao_inicial.sql
+C:\Users\USER>cd "C:\Users\USER\Documents\Flet_App\conferencia_cientifica" 
+
+e na sequencia ainda no teminal do VSCode digite por exemplo: C:\Users\USER\Documents\Flet_App\conferencia_cientifica>code .
+
+Esse comando abrirá o VSCode no diretório corrente que nesse caso de exemplo é: 
+
+C:\Users\USER>cd "C:\Users\USER\Documents\Flet_App\conferencia_cientifica"
 
 # Inicie o sistema
-python main.py
 
+digitando no terminal do VSCode: python main.py. Na sequencia iremos iniciar a aplicação python com interface grafica do Flet. Preenchemos os campos com as mesmas informações de credenciais que foram inseridas no MySQL 
+
+Workbench de acordo com a imagem abaixo: 
+
+
+ 
 👨‍💻 Autor
 Desenvolvido por Luiz André de Souza
 📫 GitHub: @brodyandre
