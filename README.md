@@ -54,19 +54,20 @@ Com base no levantamento de requisitos fornecido, as principais entidades que po
 O modelo conceitual desenvolvido servirá como plano inicial para o desenvolvimento do modelo lógico que posteriormente será a base para podermos desenvolver uma implementação para um sistema de gerenciamento de conferências científicas, garantindo que todas as informações relevantes sejam capturadas e gerenciadas de forma eficiente. A próxima etapa envolverá a definição dos relacionamentos entre essas entidades e a criação do modelo lógico.
 
 📌 Diagrama ER (Lógico) completo  
-![Diagrama ER](./imagens/diagrama_ER_logico.png)
+![Diagrama ER](./imagens/diagrma_ER_logico.png)
 
-🎓 Sistema de Gerenciamento de Conferências Científicas
+## 🎓 Sistema de Gerenciamento de Conferências Científicas
 
 Com base nos diagrmas de ER Conceitual e Lógico, conseguimos desenvolver uma aplicação completa para organização, submissão e avaliação de eventos científicos, construída com Python, Flet e MySQL Workbench.
 
 
-📌 Visão Geral
+## 📌 Visão Geral
 Este sistema foi desenvolvido para facilitar a administração de conferências científicas, permitindo o cadastro e gerenciamento de conferências, sessões temáticas, participantes, apresentações, submissões de artigos e avaliações por revisores.
 
 A aplicação conta com uma interface gráfica moderna feita em Flet e integração completa com banco de dados MySQL, utilizando o MySQL Workbench para modelagem e administração do banco.
 
-🧠 Funcionalidades Principais
+## 🧠 Funcionalidades Principais
+
 📅 Cadastro e edição de Conferências
 
 👥 Gerenciamento de Participantes (palestrantes, ouvintes e organizadores)
@@ -81,49 +82,59 @@ A aplicação conta com uma interface gráfica moderna feita em Flet e integraç
 
 💻 Interface em Flet para gerenciamento visual dos dados
 
-🧱 Modelo de Dados
+## 🧱 Modelo de Dados
 O sistema segue uma modelagem estruturada e normalizada com as seguintes entidades principais:
 
-Conferência
+ - Conferência
 
-Sessão
+ - Sessão
 
-Participante
+ - Participante
 
-Apresentação
+ - Apresentação
 
-Submissão
+ - Submissão
 
-Revisor
+ - Revisor
 
-Avaliação
-
-
+ - Avaliação
 
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 Tecnologia	Descrição
+
 🐍 Python	Lógica da aplicação
+
 🎨 Flet	Framework para UI nativa com Python
+
 🐬 MySQL	Banco de dados relacional principal
+
 🛠️ MySQL Workbench	Ferramenta para modelagem e gerenciamento
+
 📝 SQL	Script de criação e inserção de dados
+
 🧰 Visual Paradigm	Modelagem conceitual e lógica
+
 🧰 Instalação do MySQL Workbench
-🔧 Passos para Instalar
+
+## 🔧 Passos para Instalar
 Acesse: https://dev.mysql.com/downloads/workbench/
 
 Selecione o sistema operacional (Windows, macOS, Linux)
 
 Siga as instruções de instalação e configure a conexão com o banco local ou remoto
 
-📸 Veja imagens de referência em /docs/mysql_screenshots/ com os passos de conexão e execução do script.
 
-🏗️ Criação do Banco de Dados
+📸 Veja abaixo as imagens de referência com os passos de conexão e execução do script.
+
+## 🏗️ Criação do Banco de Dados
 Para criar as tabelas e popular o banco de dados:
 
-Abra o MySQL Workbench
+Abra o MySQL Workbench 
+
+📌 Imagem ilustrativa  
+![Diagrama ER](./imagens/diagrma_ER_logico.png)
 
 Conecte-se ao seu servidor MySQL
 
