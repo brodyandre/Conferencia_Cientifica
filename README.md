@@ -223,25 +223,30 @@ MySQL Workbench (opcional, mas recomendado)
 
 VSCode (recomendado)
 
-🚀 Passo a passo
+## 🚀 Passo a passo
 
 # Clone o projeto
 git clone https://github.com/seuusuario/conferencia-sistema.git
-cd conferencia-sistema
 
-# Crie e ative o ambiente virtual
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-
-# Instale as dependências
-pip install -r requirements.txt
-
-# Execute o script de criação de banco
-mysql -u usuario -p < data/populacao_inicial.sql
 
 # Inicie o sistema
 python main.py
+
+Acesse a aplicação seguindo as imagens abaixo:
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
+
+
 
 👨‍💻 Autor
 Desenvolvido por Luiz André de Souza
