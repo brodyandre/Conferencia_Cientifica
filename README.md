@@ -235,7 +235,7 @@ python main.py
 Acesse a aplicação seguindo as imagens abaixo:
 
 📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/01_Interface_Grafica_de_Conexao_ao_Banco.png)
 
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
