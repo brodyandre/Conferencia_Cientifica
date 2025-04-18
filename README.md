@@ -240,11 +240,6 @@ Acesse a aplicação seguindo as imagens abaixo:
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/02_Interface_Grafica_Principal.png)
 
-📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
-
-📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
 
 
 
