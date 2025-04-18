@@ -169,7 +169,10 @@ Criar todas as tabelas com relacionamentos conforme imagem abaixo
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
 
-Para popularmos as tabelas com registros fictícios aleatórios, devemos acessar a pasta scripts, e copiar o contéudo do arquivo: "Script para popular tabelas no workbench" deletar o script anterior na janela "Query 1" e colar nessa janela, o conteúdo copiado. Na sequencia, clicamos no botão do "Raio". Com isso inserimos registros iniciais para testes
+Para popularmos as tabelas com registros fictícios aleatórios, devemos acessar a pasta scripts, e copiar o contéudo do arquivo: "Script para popular tabelas no workbench" deletar o script anterior na janela "Query 1" e colar nessa janela, o conteúdo copiado. Na sequencia, clicamos no botão do "Raio". Com isso inserimos registros iniciais para testes. Conforme imagem abaixo: 
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
 
 ## 📂 Estrutura do Projeto
 
