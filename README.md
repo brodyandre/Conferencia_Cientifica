@@ -155,16 +155,19 @@ Clique em ok na janela que se abriu,  e em ok novmanete na janela "Setup New Con
 
 Conecte-se ao seu servidor MySQL
 
-Acesse a pasta "scripts/Scripts de Criação das Tabelas.txt" e copie o conteúdo e cole conforme imagem abaixo para executar o conteúdo do arquivo
+Acesse a pasta "scripts/Scripts de Criação das Tabelas.txt" e copie o conteúdo e cole conforme imagem abaixo para executar o conteúdo do arquivo. Para executar o script, basta clicar no simbolo de "raio" logo acima da palavra "CREATE" do script
 
 📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/09_Acessando_o_Banco_de_Dados_no_Workbench.png) 
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/10_Rodando_o_Script_para_a_Cria%C3%A7%C3%A3o_das_Tabelas_no_Workbench.png) 
 
 Esse script irá:
 
 Criar o banco ConferenciaCientifica
 
-Criar todas as tabelas com relacionamentos
+Criar todas as tabelas com relacionamentos conforme imagem abaixo
+
+📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/10_Rodando_o_Script_para_a_Cria%C3%A7%C3%A3o_das_Tabelas_no_Workbench.png)
 
 Inserir registros iniciais para testes
 
