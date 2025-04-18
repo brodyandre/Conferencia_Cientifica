@@ -245,6 +245,9 @@ Acesse a aplicação seguindo as imagens abaixo:
 
 
 📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/04_Adiconando_um_Registro_de_Conferencia_ao_Banco_de%20_Dados_via_Aplicacao.png)
+
+📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/03_Menu_Gerenciar_Sessoes.png)
 
 
