@@ -167,9 +167,9 @@ Criar o banco ConferenciaCientifica
 Criar todas as tabelas com relacionamentos conforme imagem abaixo
 
 📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/10_Rodando_o_Script_para_a_Cria%C3%A7%C3%A3o_das_Tabelas_no_Workbench.png)
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/11_Tabelas_criadas_no_Workbench.png)
 
-Inserir registros iniciais para testes
+Para popularmos as tabelas com registros fictícios aleatórios, devemos acessar a pasta scripts e copiar o contéudo do arquivo: "Script para popular tabelas no workbench" deletar o sript anterior na janela "Query 1" e colar nessa janelao conteúdo copiado. Na sequencia clicamos no botão do "Raio".Com isso inserimos registros iniciais para testes
 
 ## 📂 Estrutura do Projeto
 
