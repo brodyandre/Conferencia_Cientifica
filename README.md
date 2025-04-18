@@ -131,10 +131,24 @@ Siga as instruções de instalação e configure a conexão com o banco local ou
 ## 🏗️ Criação do Banco de Dados
 Para criar as tabelas e popular o banco de dados:
 
-Abra o MySQL Workbench 
+Abra o MySQL Workbench e clique no símbolo de "+" ao lado da opção "MySQL Connections". Preencha os dados conforme imagem abaixo:
 
 📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/usuario/repo/raw/main/imagem.png)](https://github.com/usuario/repo)
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/06_Criando_um%20_Banco_de_Dados_no_MySQL_Workbench.png)
+
+nossa configuração está assim: 
+
+ - Connection Name: conferencia_cientifica
+ - hostname: 127.0.0.1
+ - Username: root
+ - Password: 1234
+
+   Após configurar estes campos clique no botão: Test Conection. Você deverá receber a seguinte mensagem conforme imagem abaixo
+
+   📌 Imagem ilustrativa  
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/06_Criando_um%20_Banco_de_Dados_no_MySQL_Workbench.png)
+
+   
 
 Conecte-se ao seu servidor MySQL
 
@@ -148,7 +162,7 @@ Criar todas as tabelas com relacionamentos
 
 Inserir registros iniciais para testes
 
-📂 Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 conferencia_sistem/
 
