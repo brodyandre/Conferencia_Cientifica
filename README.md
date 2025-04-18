@@ -243,6 +243,13 @@ Acesse a aplicação seguindo as imagens abaixo:
 
 tela de conexão com o banco
 
+Nós utilizamos a seguinte configuração (lembre-se que essas credenciais devem ser exatamente as mesmas utilizadas para criar o banco no MySQL workbench). Caso sejam diferentes teremos um erro de acesso: 
+
+ - Connection Name: conferencia_cientifica
+ - hostname: 127.0.0.1
+ - Username: root
+ - Password: 1234
+
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/01_Interface_Grafica_de_Conexao_ao_Banco.png)
 
