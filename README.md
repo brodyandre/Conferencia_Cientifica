@@ -230,25 +230,36 @@ git clone https://github.com/seuusuario/conferencia-sistema.git
 
 
 # Inicie o sistema
-python main.py
+acesse o diretório onde foi feito o clone de dentro do terminal 
+
+estando no diretório digite: code .
+
+Esse comando abrirá o VSCode no diretório corrente onde os arquivos da aplicação estão. 
+
+Para iniciar a aplicação digite no terminal do VSCode: python main.py
+
 
 Acesse a aplicação seguindo as imagens abaixo:
+
+tela de conexão com o banco
 
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/01_Interface_Grafica_de_Conexao_ao_Banco.png)
 
+Interface de Menus
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/02_Interface_Grafica_Principal.png)
 
+Acessando o menu Gerenciar Sessões
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/03_Menu_Gerenciar_Sessoes.png)
 
-
+Adicionando um registro no banco via aplicação
 📌 Imagem ilustrativa  
 [![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/04_Adiconando_um_Registro_de_Conferencia_ao_Banco_de%20_Dados_via_Aplicacao.png)
 
 📌 Imagem ilustrativa  
-[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/03_Menu_Gerenciar_Sessoes.png)
+[![Clique aqui para ver a imagem](https://github.com/brodyandre/Conferencia_Cientifica/blob/main/imagens/05_Registro_Adicionado_ao_Banco_de_Dados_MySQL_Workbench_via_Aplicacao.png)
 
 
 
