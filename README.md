@@ -226,7 +226,7 @@ VSCode (recomendado)
 ## 🚀 Passo a passo
 
 # Clone o projeto
-git@github.com:brodyandre/Conferencia_Cientifica.git
+[git@github.com:brodyandre/Conferencia_Cientifica.git](https://github.com/brodyandre/Conferencia_Cientifica)
 
 
 # Inicie o sistema
