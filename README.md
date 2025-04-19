@@ -47,7 +47,7 @@ Com base no levantamento de requisitos fornecido, as principais entidades que po
 ## Gráfico de Entidades
 
 📌 Modelo ER (Conceitual) completo  
-![Modelo ER](./imagens/diagrama_ER_conceitual.png)
+![Modelo ER](./imagens/diagrama_ER_modelo_conceitual.png)
 
 ## Conclusão
 
